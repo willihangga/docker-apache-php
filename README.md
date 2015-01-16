@@ -25,5 +25,10 @@ $ docker port $CONTAINER 80
 # get the mysql port
 $ docker port $CONTAINER 3306
 0.0.0.0:49205
-$ mysql -hdockerhost -uroot -P 49205
+
+# get [dockerhost] IP reading 'inet addr' value
+$ ifconfig docker0 | grep 'inet addr'
+          inet addr:172.17.42.1  Bcast:0.0.0.0  Mask:255.255.0.0
+
+$ mysql -h172.17.42.1 -uroot -P 49205
 ```
