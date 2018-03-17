@@ -1,34 +1,44 @@
 # Docker Apache PHP
 
-## To Build manual way
+### To Build manual way
 ``` bash
 git clone https://github.com/willihangga/docker-apache-php.git
 cd docker-apache-php
 sudo docker build -t="eugeneware/docker-apache-php" .
-CONTAINER=$(docker run -d -p 8080:80 -p 33060:3306 -v ~/localsite.com/www:/var/www/html --name localsite.com eugeneware/docker-apache-php)
+CONTAINER=$(docker run -d -p [your custom tcp port]:80 -p [your custom mysql port]:3306 -v /your/path/to/serve:/var/www/html --name yourcontainername eugeneware/docker-apache-php)
 sudo docker ps
-
 cd ..
 rm -rf docker-apache-php
 ```
 
-### To Run
-
-Use [docker volumes](http://docs.docker.io/use/working_with_volumes/) to expose
-your web content to the apache web server.
+#### Example build
+- tcp port: 8080
+- mysql port: 33060
+- web files location: ~/Documents/localdomain.com
+- container name: localdomain.com
 
 ``` bash
-# run docker apache php
-$ CONTAINER=$(docker run -d -p 8080:80 -p 33060:3306 -v /your/path/to/serve:/var/www/html eugeneware/docker-apache-php)
+git clone https://github.com/willihangga/docker-apache-php.git
+cd docker-apache-php
+sudo docker build -t="eugeneware/docker-apache-php" .
+CONTAINER=$(docker run -d -p 8080:80 -p 33060:3306 -v ~/Documents/localdomain.com:/var/www/html --name localdomain.com eugeneware/docker-apache-php)
+sudo docker ps
+cd ..
+rm -rf docker-apache-php
+```
 
-# get the http port
-# $ docker port $CONTAINER 80
-# 0.0.0.0:49206
+### To start/stop your container
+``` bash
+# start docker apache php
+docker start yourcontainername
+
+# stop docker apache php
+docker stop yourcontainername
 ```
 
 ### To access your container
 ``` bash
-docker exec -it localsite.com /bin/bash
+docker exec -it yourcontainername /bin/bash
 ```
 
 ### To access the database
