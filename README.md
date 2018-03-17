@@ -26,15 +26,12 @@ $ CONTAINER=$(docker run -d -p 8080:80 -p 33060:3306 -v /your/path/to/serve:/var
 # 0.0.0.0:49206
 ```
 
+### To access your container
+``` bash
+docker exec -it localsite.com /bin/bash
+```
+
 ### To access the database
 ``` bash
-# get the mysql port
-# $ docker port $CONTAINER 3306
-# 0.0.0.0:49205
-
-# get [dockerhost] IP reading 'inet addr' value
-$ ifconfig docker0 | grep 'inet addr'
-          inet addr:172.17.42.1  Bcast:0.0.0.0  Mask:255.255.0.0
-
-$ mysql -h172.17.42.1 -uroot -P 33060
+# exec to your container with above command, then run mysql like usual
 ```
