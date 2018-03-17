@@ -32,7 +32,7 @@ fi
 /usr/sbin/mysqld --bootstrap --verbose=0 $MYSQLD_ARGS < $tfile
 rm -f $tfile
 
-curl -o /etc/apache2/apache2.conf https://raw.githubusercontent.com/vmgamer/docker-apache-php/master/apache2.conf
+curl -o /etc/apache2/apache2.conf https://raw.githubusercontent.com/willihangga/docker-apache-php/master/apache2.conf
 service apache2 restart
 
 pear install Mail Net_SMTP Auth_SASL Mail_Mime
