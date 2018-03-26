@@ -4,8 +4,8 @@
 ``` bash
 git clone https://github.com/willihangga/docker-apache-php.git
 cd docker-apache-php
-docker build -t="eugeneware/docker-apache-php" .
-CONTAINER=$(docker run -d -p [your custom tcp port]:80 -p [your custom mysql port]:3306 -v /your/path/to/serve:/var/www/html --name yourcontainername eugeneware/docker-apache-php)
+docker build -t="cyberneo/docker-apache-php" .
+CONTAINER=$(docker run -d -p [your custom tcp port]:80 -p [your custom mysql port]:3306 -v /your/path/to/serve:/var/www/html --name yourcontainername cyberneo/docker-apache-php)
 docker ps
 cd ..
 rm -rf docker-apache-php
@@ -20,8 +20,8 @@ rm -rf docker-apache-php
 ``` bash
 git clone https://github.com/willihangga/docker-apache-php.git
 cd docker-apache-php
-docker build -t="eugeneware/docker-apache-php" .
-CONTAINER=$(docker run -d -p 8080:80 -p 33060:3306 -v ~/Documents/localdomain.com:/var/www/html --name localdomain.com eugeneware/docker-apache-php)
+docker build -t="cyberneo/docker-apache-php" .
+CONTAINER=$(docker run -d -p 8080:80 -p 33060:3306 -v ~/Documents/localdomain.com:/var/www/html --name localdomain.com cyberneo/docker-apache-php)
 docker ps
 cd ..
 rm -rf docker-apache-php
