@@ -20,7 +20,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes install python-setupto
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes install mysql-server mysql-client apache2 libapache2-mod-php7.2 php7.2-mysql php-apc
 
 # Install PHP7 with Xdebug (dev environment)
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes install php7.2 php7.2-curl php7.2-bcmath php7.2-bz2 php7.2-dev php7.2-gd php7.2-dom php7.2-imap php7.2-imagick php7.2-intl php7.2-json php7.2-ldap php7.2-mbstring php7.2-oauth php7.2-odbc php7.2-uploadprogress php7.2-ssh2 php7.2-xml php7.2-zip php7.2-solr php7.2-apcu php7.2-opcache php7.2-memcache php7.2-memcached mcrypt php7.0-mcrypt php-pear
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes install php7.2 php7.2-curl php7.2-bcmath php7.2-bz2 php7.2-dev php7.2-gd php7.2-dom php7.2-imap php7.2-imagick php7.2-intl php7.2-json php7.2-ldap php7.2-mbstring php7.2-oauth php7.2-odbc php7.2-uploadprogress php7.2-ssh2 php7.2-xml php7.2-zip php7.2-solr php7.2-apcu php7.2-opcache php7.2-memcache php7.2-memcached php-pear
 
 # Mail function
 RUN DEBIAN_FRONTEND=noninteractive pear install Mail Net_SMTP Auth_SASL Mail_Mime
