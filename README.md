@@ -1,4 +1,4 @@
-# Docker Apache PHP
+# Docker Apache PHP 7.2
 
 ### To Build manual way
 ``` bash
