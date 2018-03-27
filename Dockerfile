@@ -9,6 +9,7 @@ RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
 
 # Add APT repo
+RUN sed -i "s/deb http:\/\/archive.ubuntu.com\/ubuntu\/ trusty-backports main restricted universe multiverse/# deb http:\/\/archive.ubuntu.com\/ubuntu\/ trusty-backports main restricted universe multiverse/g" /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -yy software-properties-common python-software-properties
 RUN add-apt-repository -y ppa:ondrej/php
